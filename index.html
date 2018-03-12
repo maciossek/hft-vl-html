@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>HFT IPR HTML</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/atom-one-dark.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-size="cover" data-background-image="https://cdn.dribbble.com/users/3375/screenshots/2550813/cody-trailer_gif.gif">
+					<h1 class="title">IPR</h1>
+					<h3 class="title">HTML</h3>
+				</section>
+				<section>
+					<section>
+						<h2>HTML</h2>
+						<ul>
+							<li>1980, gab Tim den Vorschlag für einen besseren Weg für Forscher Dokumente zu teilen und zu lesen</li>
+							<li>1990 Vorschlag für das WWW</li>
+						</ul>
+						<img style="width: 400px" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Sir_Tim_Berners-Lee.jpg" />
+					</section>
+					<section>
+						<h2>HTML</h2>
+						<ul>
+							<li><b>H</b>yper <b>T</b>ext <b>M</b>arkup <b>L</b>anguage</li>
+							<li>Hypertext: Überwinden der Beschränkungen von geschriebenen Text. Interaktiv.</li>
+							<li>Markup Language: "Aufpeppen" eines Dokuments mit Attributen wie Schriftgrößen, Bildern, Listen, Links zu anderen Seiten…</li>
+							<li>HTML ist in normalen Textdateien geschrieben.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>HTML Beispiel</h2>
+					<p data-height="300" data-theme-id="light" data-slug-hash="NgJmXR" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="NgJmXR" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/NgJmXR/">NgJmXR</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+				</section>
+				<section>
+					<section>
+						<h3>Was passiert beim eingeben einer URL?</h3>
+						<img src="./images/request.png" />
+					</section>
+					<section>
+						<h3>Was passiert beim eingeben einer URL?</h3>
+						<img src="./images/response.png" />
+					</section>
+					<section>
+						<h3>HTTP</h3>
+						<ul>
+							<li><b>H</b>yper <b>T</b>ext <b>T</b>ransfer <b>P</b>rotocol</li>
+							<li>Stateless</li>
+						</ul>
+					</section>
+					<section>
+						<h3>HTTP Kommandos</h3>
+						<ul>
+							<li>GET: Hole Daten vom Server</li>
+							<li>POST: Hole Daten vom Server und sende Daten, z.B. Formulardaten</li>
+							<li>HEAD: Wie GET, aber ohne die eigentlichen Daten des Bodies zu senden (u.a. zum Cache-Check zur Aktualitätsprüfung im Browsertests)</li>
+							<li>PUT: Update von Daten</li>
+							<li>OPTIONS: Anforderung einer Liste vom Server unterstützter Optionen</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						### HTTP Request Header (mathias-maciossek.com)
+						```
+						:authority:mathias-maciossek.com
+						:method:GET
+						:path:/
+						:scheme:https
+						accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+						accept-encoding:gzip, deflate, br
+						accept-language:en,de;q=0.8,fr;q=0.6,en-US;q=0.4
+						cache-control:no-cache
+						dnt:1
+						pragma:no-cache
+						upgrade-insecure-requests:1
+						user-agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+						```
+					</section>
+					<section data-markdown>
+						### HTTP Response Header (mathias-maciossek.com)
+						```
+						content-encoding:gzip
+						content-length:659
+						content-type:text/html
+						date:Sat, 15 Jul 2017 11:59:43 GMT
+						etag:W/"58b7e2b7-570"
+						last-modified:Thu, 02 Mar 2017 09:15:35 GMT
+						server:nginx/1.11.10
+						status:200
+						vary:Accept-Encoding
+						```
+					</section>
+					<section data-markdown>
+						### HTTP Zustandcodes
+						```
+						1xx (information)
+						100 Continue
+						101 Switching protocols
+
+						2xx (Success)
+						200 ok
+						201 Created
+						202 Accepted
+						204 No Content
+
+						3xx (Redirect)
+						300 Multiple Choices
+						307 Temporary Redirect
+						```
+					</section>
+					<section data-markdown>
+						### HTTP Zustandcodes
+						```
+						5xx (Server error)
+						500 Internal Server error
+						501 Not implemented
+
+						4xx (Client error)
+						400 Bad Request
+						401 Not Authorized
+						404 Not found
+						```
+					</section>
+					<section data-markdown>
+						<h3>HTTP/2 (Version 2)</h3>
+						<ul>
+							<li>Basierend auf SPDY, einem Protokoll von Google.</li>
+							<li>Die HTTP 1.1 Syntax und Semantik bleibt erhalten.</li>
+							<li>Asynchrone, parallele Verbindungen („Multiplexing“)</li>
+							<li>Verschlüsselung...</li>
+							<li>Request-Response Warteschlange</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						<h3>HTML Historie</h3>
+						<ul>
+							<li>Jan 1997: HTML 3.2</li>
+							<li>Dec 1997: HTML 4.0</li>
+							<li>Dec 1999: HTML 4.0.1</li>
+							<li>May 2011: Last call for HTML 5.0</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Aufbau HTML Dokument</h2>
+						<p data-height="300" data-theme-id="light" data-slug-hash="yXwrpo" data-default-tab="html" data-user="maciossek" data-embed-version="2" data-pen-title="yXwrpo" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/yXwrpo/">yXwrpo</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+						<aside class="notes">
+							Parent von allem sichtbaren Content ist body. Einrückung.
+						</aside>
+					</section>
+					<section>
+						<h2>Aufbau HTML-Tags</h2>
+						<pre style="box-shadow: none">
+							<code data-trim>
+								<tag attribute="value">content</tag>
+							</code>
+						</pre>
+						<p data-height="300" data-theme-id="light" data-slug-hash="YQgMYb" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="YQgMYb" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/YQgMYb/">YQgMYb</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+					<section>
+						<h2>Listen und Texte</h2>
+						<p data-height="300" data-theme-id="light" data-slug-hash="weOZyG" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="weOZyG" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/weOZyG/">weOZyG</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+
+					<section>
+						<h2>Links</h2>
+						<p data-height="300" data-theme-id="light" data-slug-hash="eRXoVV" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="eRXoVV" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/eRXoVV/">eRXoVV</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+
+					<section>
+						<h2>Tabellen</h2>
+						<p data-height="300" data-theme-id="light" data-slug-hash="owVOEV" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="owVOEV" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/owVOEV/">owVOEV</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+
+					<section>
+						<h2>Videos</h2>
+						<p data-height="300" data-theme-id="light" data-slug-hash="YQgMeo" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="YQgMeo" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/YQgMeo/">YQgMeo</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+
+					<section>
+						<h2>Divs und Positionierung</h2>
+						<p data-height="300" data-theme-id="light" data-slug-hash="gREyep" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="gREyep" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/gREyep/">gREyep</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+
+					<section>
+						<h2>iFrames</h2>
+						<p data-height="554" data-theme-id="light" data-slug-hash="jwJRzm" data-default-tab="html,result" data-user="maciossek" data-embed-version="2" data-pen-title="jwJRzm" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/maciossek/pen/jwJRzm/">jwJRzm</a> by Mathias Maciossek (<a href="https://codepen.io/maciossek">@maciossek</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Übung</h2>
+						<ul>
+							<li>Erstellen Sie eine HTML-Homepage auf dem Web-Server unter ~/public_html/HTML</li>
+							<li>Die Startseite muss index.html lauten, es sollen aber 3 Unterseiten sein (Bspw. Studium, Hobbies, Impressum)</li>
+							<li>Prüfen Sie auf HTML5 Korrektheit: <a target="_blank" href="http://validator.w3.org">w3c validator</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Verwenden Sie mindestens diese Tags</h2>
+						<ul>
+							<li>Listen</li>
+							<li>Tabelle</li>
+							<li>3 Bilder</li>
+							<li>Ein Video (Youtube)</li>
+							<li>iFrame</li>
+							<li>Verlinkungen auf ihre Unterseiten</li>
+						</ul>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+        slideNumber: true,
+				backgroundTransition: 'slide',
+				center: false,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
+transition
